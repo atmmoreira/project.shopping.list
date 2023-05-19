@@ -19,8 +19,7 @@ This is a project to show my profile to companies that have a job position for F
 
 ## Screens Layout
 <div align="center">
-  Login <br><br>
-  <img src="readme/layout/login.png" alt="Login"/>
+  <img src="readme/layout/layout.png" alt="Login"/>
 </div>
 
 ## Programming Languages and Frameworks.
