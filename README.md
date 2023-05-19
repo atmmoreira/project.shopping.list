@@ -11,11 +11,11 @@
 
 <!-- References for Create budgets :: https://shields.io/category/build -->
 <div align="center">
-  <img src="https://img.shields.io/static/v1?label=STATUS&message=in progress&color=red&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=React&message=18.1.0&color=blue&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=Bootstrap&message=5.1.3&color=green&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=SASS&message=1.45.1&color=pink&style=for-the-badge"/>
+  <img src="https://img.shields.io/static/v1?label=STATUS&message=in progress&color=red&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=Javascript&message=ES6&color=yellow&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=Bootstrap&message=5.3&color=purple&style=for-the-badge"/>
 </div>
 
 ## Description
-This is a project to show my profile to companies that have a job position for Frontend Web UI Developer.
+This is a project to show my profile to companies that have a job position for Frontend Software Developer. And show my skills in Javascript, html, css and bootstrap.
 
 ## Screens Layout
 <div align="center">
@@ -25,17 +25,14 @@ This is a project to show my profile to companies that have a job position for F
 
 ## Programming Languages and Frameworks.
 ```bash
-# HTML5 / CSS3 / SASS
+# HTML5 / CSS3
 # Javascript
-# Bootstrap 5.1
+# Bootstrap 5.3
 # Git / Github
-# React
-# Webpack
 ```
 
 ## System Requirements
 ```bash
-# Docker
 # Git
 # Node
 ```
@@ -45,12 +42,6 @@ This is a project to show my profile to companies that have a job position for F
 ```bash
 # Download or clone the repository.
 # Open the project inside your favorite IDE (I use VSCode).
-# Install dependencies and dev-dependencies.
-npm install or yarn install
-
-# Run the project with Webpack.
-npm run webpack
-
 # If you have the extension `Live Server` installed.
 # Click on the file index.html with right button in yor mouse, and select `Open with Live server`
 # If NOT, you just open the file index.html in your favorite browser.
