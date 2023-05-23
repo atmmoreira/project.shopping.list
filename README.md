@@ -15,7 +15,7 @@
 </div>
 
 ## Description
-This is a project to show my profile to companies that have a job position for Frontend Software Developer. And show my skills in Javascript, html, css and bootstrap.
+This is a project to show my profile to companies that have a job position for Frontend Software Developer. And show my skills in Javascript Vanilla.
 
 ## Screens Layout
 <div align="center">

@@ -10,7 +10,7 @@ function addItem (e) {
   const newItem = inputTextItem.value;
 
   // Validate Input
-  if (newItem === '') {
+  if (newItem.trim() === '') {
     alert('Por favor, adicione um item');
     return;
   }
@@ -18,9 +18,9 @@ function addItem (e) {
   // Create Elements
   const li = createElement('li', 'list-group-item d-flex justify-content-between align-items-start');
   const firstDiv = createElement('div', 'ms-2 me-auto');
-  const spanDelete = createElement('span', 'btnDelete text-danger');
-  const iconDelete = createElement('i', 'fa-regular fa-trash-can');
   const secondDiv = createElement('div', 'fw-bold');
+  const spanDelete = createElement('span', 'btnDelete text-danger'); 
+  const iconDelete = createElement('i', 'fa-regular fa-trash-can');
 
   // Append Elements
   li.appendChild(firstDiv);
