@@ -17,8 +17,9 @@ function onAddItemSubmit(e) {
   }
   // Add item to the DOM
   addItemToDOM(newItem);
-  // Add item to localstorage
+  // Add item to localStorage
   addItemToStorage(newItem);
+  // Check items in DOM
   checkUI();
   // Clear Value Input Field
   inputTextItem.value = '';
@@ -45,10 +46,10 @@ function addItemToDOM(item) {
   // Add li to the DOM
   itemList.appendChild(li);
 }
-// Add item to localstorage
+// Add item to localStorage
 function addItemToStorage(item) {
   let itemsFromStorage;
-
+  // Verify items on localStorage
   if (localStorage.getItem('items') === null) {
     itemsFromStorage = [];
   } else {
@@ -56,7 +57,7 @@ function addItemToStorage(item) {
   }
   // Add new items to array
   itemsFromStorage.push(item);
-  // Convert to JSON string and set to localstorage
+  // Convert to JSON string and set to localStorage
   localStorage.setItem('items', JSON.stringify(itemsFromStorage))
 }
 // Create Element
