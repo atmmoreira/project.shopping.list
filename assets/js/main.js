@@ -120,13 +120,16 @@ function filterItems(e) {
     }
   })
 }
+// Initialize App
+function init() {
+  //  Add Event Listener
+  itemForm.addEventListener('submit', onAddItemSubmit);
+  itemList.addEventListener('click', removeItem);
+  btnClear.addEventListener('click', clearItems);
+  inputTextFilter.addEventListener('input', filterItems);
+  document.addEventListener('DOMContentLoaded', displayItems);
 
-//  Add Event Listener
-itemForm.addEventListener('submit', onAddItemSubmit);
-itemList.addEventListener('click', removeItem);
-btnClear.addEventListener('click', clearItems);
-inputTextFilter.addEventListener('input', filterItems);
-document.addEventListener('DOMContentLoaded', displayItems);
-
-// Invocate Functions
-checkUI();
+  // Invocate Functions
+  checkUI();
+}
+init();
