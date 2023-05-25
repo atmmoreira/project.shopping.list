@@ -76,20 +76,40 @@ function getItemsFromStorage() {
   }
   return itemsFromStorage
 }
-// Remove Item to the DOM
-function removeItem(e) {
+// On Click Item to the DOM
+function onClickItem(e) {
   if (e.target.classList.contains('btnDelete')) {
-    if (confirm('Tem certeza que deseja excluir?')) {
-      e.target.parentElement.parentElement.remove();
-    }
+    removeItem(e.target.parentElement.parentElement);
   }
-  checkUI();
+}
+// Remove Item to the DOM
+function removeItem(item) {
+  if (confirm('Tem certeza que deseja excluir este item?')) {
+    // Remove item from DOM
+    item.remove();
+    // Remove Item from localStorage
+    removeItemFromStorafe(item.textContent);
+    // Check UI Elements
+    checkUI();
+  }
+}
+// Remove Item From Storage
+function removeItemFromStorafe(item) {
+  let itemsFromStorage = getItemsFromStorage();
+  // Filter out item to be removed
+  itemsFromStorage = itemsFromStorage.filter(i => i !== item);
+  // Re-set to localStorage
+  localStorage.setItem('items', JSON.stringify(itemsFromStorage));
+
 }
 // Clear Items
 function clearItems() {
   while (itemList.firstChild) {
     itemList.removeChild(itemList.firstChild);
   }
+  // Clear from localStorage
+  localStorage.removeItem('items');
+  // Check elements in the DOM
   checkUI();
 }
 // Check UI Elements
@@ -124,7 +144,7 @@ function filterItems(e) {
 function init() {
   //  Add Event Listener
   itemForm.addEventListener('submit', onAddItemSubmit);
-  itemList.addEventListener('click', removeItem);
+  itemList.addEventListener('click', onClickItem);
   btnClear.addEventListener('click', clearItems);
   inputTextFilter.addEventListener('input', filterItems);
   document.addEventListener('DOMContentLoaded', displayItems);
