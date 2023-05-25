@@ -5,6 +5,11 @@ const btnClear = document.getElementById('btnClearItem');
 const inputTextFilter = document.getElementById('inputTextFilter');
 const hrLine = document.getElementById('hrLine');
 
+// Display items to the DOM
+function displayItems(){
+  const itemsFromStorage = getItemsFromStorage();
+  itemsFromStorage.forEach(item => addItemToDOM(item));
+}
 // Add Item
 function onAddItemSubmit(e) {
   e.preventDefault();
@@ -48,13 +53,7 @@ function addItemToDOM(item) {
 }
 // Add item to localStorage
 function addItemToStorage(item) {
-  let itemsFromStorage;
-  // Verify items on localStorage
-  if (localStorage.getItem('items') === null) {
-    itemsFromStorage = [];
-  } else {
-    itemsFromStorage = JSON.parse(localStorage.getItem('items'));
-  }
+  const itemsFromStorage = getItemsFromStorage();
   // Add new items to array
   itemsFromStorage.push(item);
   // Convert to JSON string and set to localStorage
@@ -65,6 +64,17 @@ function createElement(element, className) {
   const elementItem = document.createElement(element);
   elementItem.className = className;
   return elementItem;
+}
+// Get Items from localStorage
+function getItemsFromStorage() {
+  let itemsFromStorage;
+  // Verify items on localStorage
+  if (localStorage.getItem('items') === null) {
+    itemsFromStorage = [];
+  } else {
+    itemsFromStorage = JSON.parse(localStorage.getItem('items'));
+  }
+  return itemsFromStorage
 }
 // Remove Item to the DOM
 function removeItem(e) {
@@ -111,11 +121,12 @@ function filterItems(e) {
   })
 }
 
-//  Add Eventlistener
+//  Add Event Listener
 itemForm.addEventListener('submit', onAddItemSubmit);
 itemList.addEventListener('click', removeItem);
 btnClear.addEventListener('click', clearItems);
 inputTextFilter.addEventListener('input', filterItems);
+document.addEventListener('DOMContentLoaded', displayItems);
 
 // Invocate Functions
 checkUI();
