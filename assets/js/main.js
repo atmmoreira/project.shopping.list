@@ -27,11 +27,15 @@ function onAddItemSubmit(e) {
   // Check for edit mode
   if (isEditMode) {
     const itemToEdit = itemList.querySelector('.item-list-selected');
-
     removeItemFromStorage(itemToEdit.textContent);
     itemToEdit.classList.remove('item-list-selected');
     itemToEdit.remove();
     isEditMode = false;
+  } else {
+    if (checkIfItemExists(newItem)){
+      alert('Este item já existe!');
+      return;
+    }
   }
   // Add item to the DOM
   addItemToDOM(newItem);
@@ -101,6 +105,12 @@ function onClickItem(e) {
   } else {
     setItemToEdit(e.target.parentElement.parentElement);
   }
+}
+// Check duplicate items
+function checkIfItemExists(item){
+  const itemsFromStorage = getItemsFromStorage();
+  inputTextItem.value = '';
+  return itemsFromStorage.includes(item);
 }
 // Edit item to the DOM
 function setItemToEdit(item) {
